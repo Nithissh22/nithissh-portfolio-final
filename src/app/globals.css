@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Editorial Design Tokens ───────────────────── */
+
+:root {
+  --bg: #f5f2ec;
+  --fg: #0a0a0a;
+  --muted: #6b6b6b;
+  --border: #d4d0c8;
+  --accent: #c45d2c;
+  --surface: #eae6de;
+  --inverse-bg: #0a0a0a;
+  --inverse-fg: #f5f2ec;
+}
+
+/* ── Base ──────────────────────────────────────── */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Syne', sans-serif;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--inverse-fg);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ── Typography Classes ────────────────────────── */
+
+.font-display {
+  font-family: 'Instrument Serif', serif;
+}
+
+.font-mono {
+  font-family: 'DM Mono', monospace;
+}
+
+.font-heading {
+  font-family: 'Syne', sans-serif;
+}
+
+/* ── Layout ────────────────────────────────────── */
+
+.section-shell {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 6rem 2rem;
+}
+
+@media (min-width: 768px) {
+  .section-shell {
+    padding: 8rem 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-shell {
+    padding: 10rem 4rem;
+  }
+}
+
+/* ── Custom Cursor ─────────────────────────────── */
+/* cursor:none is injected via JS only on (hover:hover) + (pointer:fine) devices.
+   Touch screens and stylus-only devices retain the system cursor. */
+
+/* ── Marquee ───────────────────────────────────── */
+
+.marquee-band {
+  background: var(--inverse-bg);
+  color: var(--inverse-fg);
+  padding: 1rem 0;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.marquee-band:hover .marquee-inner {
+  animation-play-state: paused;
+}
+
+/* ── Borders ───────────────────────────────────── */
+
+.border-editorial {
+  border-bottom: 1px solid var(--border);
+}
+
+.border-editorial-dark {
+  border-bottom: 1px solid #262626;
+}
+
+/* ── Dark Section ──────────────────────────────── */
+
+.section-dark {
+  background: var(--inverse-bg);
+  color: var(--inverse-fg);
+}
+
+.section-dark .text-muted-editorial {
+  color: #999;
+}
+
+/* ── Hover Invert (Project Cards) ──────────────── */
+
+.card-invert {
+  background: transparent;
+  border: 1px solid var(--border);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-invert:hover {
+  background: var(--fg);
+  color: var(--bg);
+  border-color: var(--fg);
+}
+
+.card-invert:hover .text-muted-editorial {
+  color: #999;
+}
+
+.card-invert:hover .accent-tag {
+  color: var(--accent);
+}
+
+/* ── Experience Row Hover ──────────────────────── */
+
+.exp-row {
+  border-bottom: 1px solid #262626;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.exp-row:hover {
+  background: #111;
+  padding-left: 1.5rem;
+}
+
+/* ── Scroll Reveal ─────────────────────────────── */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.group:hover .animate-spin-slow {
+  animation-play-state: paused;
+}
+
+/* ── Responsive Cursor ──────────────────────────── */
+/* cursor:none injected by JS; no CSS override needed for touch. */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
