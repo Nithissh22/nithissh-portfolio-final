@@ -4,6 +4,7 @@ import { BackToTop } from "@/components/back-to-top";
 import { CustomCursor } from "@/components/custom-cursor";
 import { Footer } from "@/components/footer";
 import { Navigation } from "@/components/navigation";
+import { PageLoader } from "@/components/page-loader";
 import { SmoothScrollProvider } from "@/components/smooth-scroll-provider";
 import { profile } from "@/lib/data";
 
@@ -78,6 +79,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body suppressHydrationWarning>
         <SmoothScrollProvider>
+          <PageLoader />
           <CustomCursor />
           <Navigation />
           {children}
