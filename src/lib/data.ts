@@ -32,9 +32,9 @@ export const profile = {
 };
 
 export const stats = [
-  { label: "CGPA", value: "8.29" },
+  { label: "CGPA", value: "8.38" },
   { label: "INTERNSHIPS", value: "02" },
-  { label: "PROJECTS", value: "04" },
+  { label: "PROJECTS", value: "05" },
   { label: "CERTIFICATIONS", value: "09" },
   { label: "RESEARCH PAPERS", value: "02" }
 ];
@@ -68,6 +68,18 @@ export const experiences = [
 ];
 
 export const projects: Project[] = [
+  {
+    slug: "codemeshflow",
+    title: "CodeMeshFlow",
+    subtitle: "Developer Collaboration Platform",
+    category: "FULL STACK",
+    image: "/images/project-codemeshflow.png",
+    overview: "A powerful developer collaboration platform built to streamline workflows, enabling teams to code, review, and ship together seamlessly.",
+    stack: ["NEXT.JS", "REACT", "NODE.JS", "TYPESCRIPT"],
+    githubUrl: "https://codemeshflow.in/",
+    demoUrl: "https://codemeshflow.in/",
+    outcomeStat: "Live Platform"
+  },
   {
     slug: "emotisync",
     title: "EmotiSync",
@@ -179,7 +191,7 @@ export const education = [
   {
     title: "SRM Institute of Science and Technology",
     detail: "B.Tech CSE (AI & ML)",
-    metric: "CGPA 8.29",
+    metric: "CGPA 8.38",
     year: "2023"
   },
   {

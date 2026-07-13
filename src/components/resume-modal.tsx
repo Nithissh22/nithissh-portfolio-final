@@ -43,7 +43,7 @@ export function ResumeModal({ compact = false }: ResumeModalProps) {
             <section>
               <h3 className="text-sm font-semibold uppercase text-foreground">Highlights</h3>
               <ul className="mt-3 space-y-2 text-sm leading-6 text-muted">
-                <li>CGPA 8.29 with AI and ML specialization.</li>
+                <li>CGPA 8.38 with AI and ML specialization.</li>
                 <li>2 internships across data science and software engineering.</li>
                 <li>4 major projects spanning NLP, CV, full stack, and product engineering.</li>
                 <li>9 certifications across AI, cloud, analytics, security, and programming.</li>
