@@ -29,7 +29,7 @@ const toneByCategory: Record<Project["category"], "blue" | "green" | "amber"> = 
 };
 
 export function ProjectDetailContent({ project }: { project: Project }) {
-  const demoHref = project.demoUrl.startsWith("#") ? `/${project.demoUrl}` : project.demoUrl;
+  const demoHref = project.demoUrl?.startsWith("#") ? `/${project.demoUrl}` : project.demoUrl;
 
   return (
     <main className="pt-24">
@@ -147,7 +147,7 @@ export function ProjectDetailContent({ project }: { project: Project }) {
               </div>
               <h2 className="mt-5 text-lg font-semibold text-foreground">Key Features</h2>
               <ul className="mt-4 space-y-3">
-                {project.features.map((feature) => (
+                {project.features?.map((feature) => (
                   <li className="flex gap-3 text-sm leading-6 text-muted" key={feature}>
                     <CheckCircle2
                       className="mt-0.5 shrink-0 text-accent"
@@ -165,7 +165,7 @@ export function ProjectDetailContent({ project }: { project: Project }) {
         <div className="mt-8 rounded-lg border border-border bg-card p-6 shadow-sm">
           <h2 className="text-lg font-semibold text-foreground">Outcome</h2>
           <div className="mt-5 grid gap-3 md:grid-cols-3">
-            {project.impact.map((item) => (
+            {project.impact?.map((item) => (
               <div className="rounded-lg border border-border bg-background p-4" key={item}>
                 <p className="text-sm leading-6 text-muted">{item}</p>
               </div>

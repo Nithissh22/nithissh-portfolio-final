@@ -20,7 +20,8 @@ import {
   projectCategories,
   projects,
   qna,
-  stats
+  stats,
+  type Project
 } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
@@ -201,7 +202,7 @@ function GamesShowcase() {
                       {game.genre}
                     </span>
                     <p className="font-['Barlow'] font-light italic text-[16px] text-[#f5f2ec] transform transition-transform duration-500 delay-150 translate-y-[200%] group-hover:translate-y-0">
-                      "{game.note}"
+                      &quot;{game.note}&quot;
                     </p>
                     <div className="mt-2 transform transition-transform duration-500 delay-[200ms] translate-y-[200%] group-hover:translate-y-0 inline-block">
                       <span className="border border-[#f5f2ec]/30 bg-[#f5f2ec]/10 backdrop-blur-md px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-[#f5f2ec]">
@@ -245,7 +246,7 @@ function MusicSection() {
       </div>
       <div className="px-10 mb-8">
         <span className="font-mono text-xs uppercase tracking-widest text-[var(--muted)]">
-          WHAT'S IN MY EARS WHILE THE MODEL TRAINS
+          WHAT&apos;S IN MY EARS WHILE THE MODEL TRAINS
         </span>
       </div>
 
@@ -376,7 +377,7 @@ function RotatingBadge() {
   );
 }
 
-function ProjectRow({ project, index }: { project: any, index: number }) {
+function ProjectRow({ project, index }: { project: Project, index: number }) {
   const [isHovered, setIsHovered] = React.useState(false);
   const [mousePos, setMousePos] = React.useState({ x: 0, y: 0 });
 
@@ -449,11 +450,11 @@ function ProjectRow({ project, index }: { project: any, index: number }) {
 /* ── Main Page ──────────────────────────────────── */
 
 export function PortfolioHome() {
-  const [category, setCategory] = React.useState<(typeof projectCategories)[number]>("All");
+  const [category, setCategory] = React.useState<(typeof projectCategories)[number]>("ALL");
   const [showGames, setShowGames] = React.useState(false);
 
   const filteredProjects = React.useMemo(() => {
-    if (category === "All") return projects;
+    if (category === "ALL") return projects;
     return projects.filter((p) => p.category === category);
   }, [category]);
 
