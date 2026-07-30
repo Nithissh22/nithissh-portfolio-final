@@ -19,7 +19,6 @@ import {
   profile,
   projectCategories,
   projects,
-  qna,
   stats,
   type Project
 } from "@/lib/data";
@@ -83,48 +82,6 @@ function MotionSection({ children, className, id }: { children: React.ReactNode;
   );
 }
 
-function QnAAccordion() {
-  const [openIndex, setOpenIndex] = React.useState<number | null>(0);
-
-  return (
-    <div className="w-full">
-      {qna.map((item, i) => {
-        const isOpen = openIndex === i;
-        return (
-          <div 
-            key={i} 
-            className="group cursor-pointer border-b border-[var(--border)] transition-colors hover:bg-black/5"
-            onClick={() => setOpenIndex(isOpen ? null : i)}
-          >
-            <div className="flex items-center justify-between py-6 pr-4">
-              <h3 className={`font-mono text-sm uppercase tracking-widest transition-colors duration-300 ${isOpen ? 'text-[#0a0a0a]' : 'text-[var(--accent)]'}`}>
-                {item.q}
-              </h3>
-              <div 
-                className="flex items-center justify-center text-3xl font-light transition-transform duration-300 text-[#0a0a0a]" 
-                style={{ transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)' }}
-              >
-                +
-              </div>
-            </div>
-            <motion.div
-              initial={false}
-              animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="overflow-hidden"
-            >
-              <div className="border-l-[3px] border-[var(--accent)] mb-8 pl-6">
-                <p className="text-[22px] md:text-[26px] font-light leading-[1.6] text-[#0a0a0a]">
-                  {item.a}
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
 
 function GamesShowcase() {
   const [hoveredIndex, setHoveredIndex] = React.useState<number | null>(null);
@@ -1049,19 +1006,6 @@ export function PortfolioHome() {
         </div>
       </MotionSection>
 
-      {/* ── Q&A (Personality) ────────────────────── */}
-      <MotionSection className="pt-24 pb-0 max-w-[1440px] mx-auto w-full">
-        <div className="px-10">
-          <span className="font-mono text-xs uppercase tracking-widest text-[var(--muted)] mb-8 block">
-            (Q&A)
-          </span>
-          <h2 className="font-['Anton'] uppercase text-[15vw] md:text-[10vw] xl:text-[8vw] leading-[0.85] tracking-tight mb-2">
-            BEYOND THE CODE
-          </h2>
-          <div className="mt-8 h-px w-full bg-[var(--border)]" />
-          <QnAAccordion />
-        </div>
-      </MotionSection>
 
       {/* Full-width Marquee at the bottom of QnA */}
       <div className="border-y border-[var(--border)] py-4 overflow-hidden flex whitespace-nowrap">
