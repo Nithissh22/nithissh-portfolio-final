@@ -41,6 +41,18 @@ export const stats = [
 
 export const experiences = [
   {
+    role: "Full Stack Engineer",
+    company: "CodeMeshFlow",
+    period: "Present",
+    responsibilities: [
+      "Working on the core engineering team of an early-stage startup",
+      "Architecting and developing a comprehensive developer collaboration platform",
+      "Building scalable full-stack features using Next.js and TypeScript"
+    ],
+    stack: ["NEXT.JS", "REACT", "NODE.JS", "TYPESCRIPT"],
+    outcome: "Driving the technical development of a live collaboration platform"
+  },
+  {
     role: "Data Science Intern",
     company: "Cognizance",
     period: "Jun — Aug 2024",
