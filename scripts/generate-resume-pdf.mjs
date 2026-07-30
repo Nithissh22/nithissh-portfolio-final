@@ -6,7 +6,7 @@ const output = join(process.cwd(), "public", "resume-nithissh-sampath-kumar.pdf"
 const lines = [
   { text: "Nithissh Sampath Kumar", size: 22, y: 742 },
   { text: "AI Engineer, Full Stack Developer, and Product Builder", size: 11, y: 720 },
-  { text: "B.Tech CSE (AI & ML), SRM Institute of Science and Technology | CGPA 8.29", size: 10, y: 704 },
+  { text: "B.Tech CSE (AI & ML), SRM Institute of Science and Technology | CGPA 8.38", size: 10, y: 704 },
   { text: "Profile", size: 13, y: 668 },
   { text: "Passionate AI and Machine Learning engineer focused on scalable intelligent systems,", size: 10, y: 648 },
   { text: "computer vision products, NLP workflows, and full stack applications.", size: 10, y: 634 },

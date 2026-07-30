@@ -866,7 +866,7 @@ export function PortfolioHome() {
             <div className="flex flex-wrap items-center gap-8 md:gap-12">
               <div className="flex flex-col">
                 <span className="font-['Bebas_Neue'] text-[56px] text-[var(--accent)] leading-[0.85]">
-                  8.29
+                  8.38
                 </span>
                 <span className="font-mono text-[10px] uppercase tracking-widest text-[var(--muted)] mt-2">
                   CGPA
